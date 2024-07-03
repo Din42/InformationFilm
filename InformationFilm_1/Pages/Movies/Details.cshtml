@@ -1,0 +1,29 @@
+﻿@page "{id:int}"
+@model InformationFilm_1.Pages.Movies.DetailsModel
+@{
+    int id = -1;
+    try
+    {
+        id = Int32.Parse(RouteData.Values["id"].ToString());
+    }
+    catch (Exception) { }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Details</title>
+</head>
+<body>
+
+<h1>@Model.Movies.Title</h1>
+<p><strong>Директор:</strong> @Model.Movies.Director</p>
+<p><strong>Год:</strong> @Model.Movies.Year</p>
+<p><strong>Фильм о:</strong> @Model.Movies.Description</p>
+
+<a href="/Movies">Back to list</a>
+
+</body>
+</html>
+

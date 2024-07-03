@@ -1,0 +1,18 @@
+﻿@page
+@model InformationFilm_1.Pages.Movies.IndexModel
+@{
+    ViewData["Title"] = "Фильмы";
+}
+
+<h1>Фильмы</h1>
+
+<ul>
+    @for(int i = 0; i < Model.Movies.Count; i++)
+    {
+        var movie = Model.Movies[i];
+        <li>
+            <a href="Movies/Details/@i">@movie.Title</a>
+        </li>
+    }
+</ul>
+
